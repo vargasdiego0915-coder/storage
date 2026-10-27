@@ -1,0 +1,23 @@
+function mostrarNombre() {
+    const nombre = sessionStorage.getItem("nombre");
+    const ciudad = sessionStorage.getItem("ciudad");
+    if (nombre === null) {
+        document.getElementById("saludo").textContent = "No hay ningun nombre guardado.";
+
+    } else {
+        document.getElementById("saludo").textContent = "Hola, " + nombre + " de " + ciudad;
+    }
+}
+
+function borar() {
+    sessionStorage.removeItem("ciudad");
+    sessionStorage.removeItem("nombre");
+    mostrarNombre();
+
+
+}
+document.addEventListener("DOMContentLoaded", mostrarNombre);
+document.getElementById("btn-borrar").addEventListener("click", borar);
+document.getElementById("limpiar").sessionStorage.clear("click",borar);
+
+
